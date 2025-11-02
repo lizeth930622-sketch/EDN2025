@@ -1,15 +1,13 @@
 #include <stdio.h>
 
-
 void swap(int *a, int *b) {
     int temp = *a;
     *a = *b;
     *b = temp;
 }
 
-
 int partition(int arr[], int low, int high) {
-    int pivot = arr[high];  
+    int pivot = arr[high];
     int i = low;
 
     for (int j = low; j < high; j++) {
@@ -23,7 +21,6 @@ int partition(int arr[], int low, int high) {
     return i;
 }
 
-
 void quickSort(int arr[], int low, int high) {
     if (low < high) {
         int p = partition(arr, low, high);
@@ -32,23 +29,23 @@ void quickSort(int arr[], int low, int high) {
     }
 }
 
+void mostrarArray(int arr[], int n) {
+    for (int i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+    printf("\n");
+}
 
 int main() {
     int data[] = {28, 11, 96, -5, 21, 18, 12, 22};
     int n = sizeof(data) / sizeof(data[0]);
 
     printf("Arreglo original:\n");
-    for (int i = 0; i < n; i++) {
-        printf("%d ", data[i]);
-    }
+    mostrarArray(data, n);
 
     quickSort(data, 0, n - 1);
 
-    printf("\n\nArreglo ordenado con Quicksort:\n");
-    for (int i = 0; i < n; i++) {
-        printf("%d ", data[i]);
-    }
+    printf("\nArreglo ordenado con Quicksort:\n");
+    mostrarArray(data, n);
 
-    printf("\n");
     return 0;
 }
