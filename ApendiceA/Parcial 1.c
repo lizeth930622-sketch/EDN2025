@@ -1,5 +1,3 @@
-PARCIAL APENDICE A
-
 #include <stdio.h>
 #define MAX 5
 
